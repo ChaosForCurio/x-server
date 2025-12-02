@@ -4,6 +4,6 @@
         "server"
     ],
     "scripts": {
-        "build": "mkdir -p public"
+        "build": "mkdir -p public && echo '<h1>Server is running</h1>' > public/index.html"
     }
 }
