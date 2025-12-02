@@ -13,17 +13,10 @@ app.use(cors());
 app.use(express.json());
 
 // Request logging
+// Request logging
 app.use((req, res, next) => {
   const msg = `[${new Date().toISOString()}] ${req.method} ${req.url}`;
   console.log(msg);
-  try {
-    const fs = require("fs");
-    const path = require("path");
-    const logFile = path.resolve(__dirname, "../server-error.log");
-    fs.appendFileSync(logFile, msg + "\n");
-  } catch (e) {
-    // ignore
-  }
   next();
 });
 

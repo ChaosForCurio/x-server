@@ -10,19 +10,8 @@ import { saveImageMetadata } from "../services/firebaseService";
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
 
-import fs from "fs";
-import path from "path";
-
-const LOG_FILE = path.resolve(__dirname, "../../server-error.log");
-
 function logErrorToFile(message: string, data?: any) {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] ${message}\n${data ? JSON.stringify(data, null, 2) : ""}\n\n`;
-    try {
-        fs.appendFileSync(LOG_FILE, logEntry);
-    } catch (e) {
-        console.error("Failed to write to log file:", e);
-    }
+    console.error(message, data);
 }
 
 router.get("/debug-test", (req, res) => {
