@@ -1,0 +1,9 @@
+{
+    "private": true,
+    "workspaces": [
+        "server"
+    ],
+    "scripts": {
+        "build": "echo 'No build step for root'"
+    }
+}
