@@ -4,6 +4,6 @@
         "server"
     ],
     "scripts": {
-        "build": "echo 'No build step for root'"
+        "build": "mkdir -p public"
     }
 }
